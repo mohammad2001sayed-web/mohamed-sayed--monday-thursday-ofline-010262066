@@ -1,1 +1,506 @@
-console.log('hello');
+var all = [
+  {
+    name: "Spaghetti Carbonara",
+    desc: " Italian",
+    rate: 4.5,
+    category: "Italian",
+    img: "./image/imgi_2_photo-1467003909585-2f8a72700288.jpg",
+  },
+  {
+    name: "Beef Burger",
+    desc: " American Lorem ipsum dolor ",
+    rate: 4.6,
+    category: "American ", 
+    img: "./image/imgi_2_photo-1547592166-23ac45744acd.jpg",
+  },
+  {
+    name: "Sushi",
+    desc: " Inventore esse ducimus",
+    rate: 4.7,
+    category: "Asian",
+    img: "./image/imgi_2_photo-1633504581786-316c8002b1b9.jpg",
+  },
+  {
+    name: "Koshary",
+    desc: " Egyptian ipsam nemo sint aperiam fugiat,",
+    rate: 4.8,
+    category: "Egyptian",
+    img: "./image/imgi_2_photo-1529692236671-f1f6cf9683ba.jpg",
+  },
+  {
+    name: "Lasagna Bolognese",
+    desc: "japanese sit amet,  Inventore esse ducimus",
+    rate: 4.9,
+    category: "turkian",
+    img: "./image/imgi_2_photo-1565557623262-b51c2513a641.jpg",
+  },
+  {
+    name: "pasta",
+    desc: " recusandae cupiditate repellat! Dolorem, repellat!",
+    rate: 5,
+    category: "asian",
+    img: "./image/imgi_2_photo-1565299585323-38d6b0865b47.jpg",
+  },
+  {
+    name: "lorem italy",
+    desc: "Famous Egyptian dish in the world",
+    rate: 5.6,
+    category: "Egyptian",
+    img: "./image/imgi_2_photo-1603133872878-684f208fb84b.jpg",
+  },
+];
+
+function reloudPtn() {
+  var random = Math.floor(Math.random() * all.length);
+
+document.getElementById("rowData").innerHTML = `
+
+
+            <div class="col-12 col-lg-6 p-0 "> 
+            <div class="">
+              <div class="position-relative">
+                <img
+                id="meal-img"
+                  class="w-100 d-block img-fluid object-fit-cover"
+                  src="${all[random].img}"
+                  alt="profailo"
+                />
+
+                <div
+                  class="reviews bg-white shadow p-2 position-absolute rounded-pill"
+                >
+                  <i class="fa-solid fa-star text-warning"></i>
+                  <span>${all[random].rate}</span>
+                  <span> (445 reviews)</span>
+                </div>
+                
+
+                <div
+                  class="prep bg-white shadow rounded-4 p-2 d-flex align-items-center justify-content-around"
+                >
+                  <div class="d-flex flex-column gap-2">
+                    <i class="fa-solid fa-clock ms-3 main-color fs-4"></i>
+                    <p>Prep Time</p>
+                    <p class="fw-bold">15 min</p>
+                  </div>
+                  <div class="d-flex flex-column gap-2">
+                    <i
+                      class="fa-solid fa-fire-burner fs-4 ms-3 text-danger"
+                    ></i>
+                    <p>Prep Time</p>
+                    <p class="fw-bold">15 min</p>
+                  </div>
+                  <div class="d-flex flex-column gap-2">
+                    <i class="fa-solid fa-users fs-4 ms-3 text-primary"></i>
+                    <p>Prep Time</p>
+                    <p class="fw-bold">15 min</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-12 col-lg-6">
+            <div>
+              <div class="d-flex flex-wrap gap-3 pt-3">
+                <span class="bg-success-subtle text-success rounded-pill px-3"
+                  >Easy</span
+                >
+                <span class="bg-primary-subtle rounded-pill px-3 text-primary"
+                  >${all[random].category}</span
+                >
+              </div>
+
+              <div
+                class="d-flex align-items-center py-3 justify-content-between"
+              >
+                <div>
+                  <h3 id="meal-title" class="fw-bold">${all[random].name}</h3>
+                  <p class="text-secondary fw-bold">
+                    ${all[random].desc}
+                  </p>
+                </div>
+                <div class="text-white">
+                  <button class="style-color border-0 p-2 rounded-4">
+                    <a href="#"
+                      ><i class="fa-solid fa-bookmark text-danger"></i
+                    ></a>
+                  </button>
+                  <button class="style-color border-0 p-3 rounded-4">
+                    <a href="#"
+                      ><i class="fa-solid fa-share-nodes text-danger"></i
+                    ></a>
+                  </button>
+                </div>
+              </div>
+                  <div class="Extended d-flex align-items-center gap-2 rounded p-2 my-2">
+      <i class="fa-solid fa-triangle-exclamation align-self-start mt-2"></i>
+      <div class="text-danger ">
+        <p class="fw-bold">Extended Preparation Time</p>
+        <p class="recipe">This recipe requires more than 45 minutes to prepare. Plan accordingly!</p>
+      </div>
+    </div>
+
+
+              <!-- nav & tabs -->
+
+              <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+                <li class="nav-item" role="presentation">
+                  <button
+                    class="nav-link active"
+                    id="pills-lngredients-tab"
+                    data-bs-toggle="pill"
+                    data-bs-target="#pills-lngredients"
+                    type="button"
+                    role="tab"
+                    aria-controls="pills-lngredients"
+                    aria-selected="true"
+                  >
+                    <i class="fa-solid fa-align-left"></i> lngredients
+                  </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                  <button
+                    class="nav-link"
+                    id="pills-lnstructions-tab"
+                    data-bs-toggle="pill"
+                    data-bs-target="#pills-lnstructions"
+                    type="button"
+                    role="tab"
+                    aria-controls="pills-lnstructions"
+                    aria-selected="false"
+                  >
+                    <i class="fa-solid fa-book-open"></i> lnstructions
+                  </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                  <button
+                    class="nav-link"
+                    id="pills-Nutrition-tab"
+                    data-bs-toggle="pill"
+                    data-bs-target="#pills-Nutrition"
+                    type="button"
+                    role="tab"
+                    aria-controls="pills-Nutrition"
+                    aria-selected="false"
+                  >
+                    <i class="fa-solid fa-cookie"></i> Nutrition
+                  </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                  <button
+                    class="nav-link"
+                    id="pills-Tips-tab"
+                    data-bs-toggle="pill"
+                    data-bs-target="#pills-Tips"
+                    type="button"
+                    role="tab"
+                    aria-controls="pills-Tips"
+                    aria-selected="false"
+                  >
+                    <i class="fa-solid fa-lightbulb"></i> Tips Chef's
+                  </button>
+                </li>
+              </ul>
+              <div class="tab-content" id="pills-tabContent">
+                <div
+                  class="tab-pane fade show active  p-3 rounded-3"
+                  id="pills-lngredients"
+                  role="tabpanel"
+                  aria-labelledby="pills-lngredients-tab"
+                  tabindex="0"
+                >
+                  <div class="group d-flex gap-3 flex-column">
+                    <div class="d-flex gap-3">
+                      <div class="number">1</div>
+                      <span>500g ground beef (80/20)</span>
+                    </div>
+                    <div class="d-flex gap-3">
+                      <div class="number">2</div>
+                      <span>500g ground lamb</span>
+                    </div>
+                    <div class="d-flex gap-3">
+                      <div class="number">3</div>
+                      <span>400g canned tomatoes</span>
+                    </div>
+                    <div class="d-flex gap-3">
+                      <div class="number">4</div>
+                      <span>1 onion, diced</span>
+                    </div>
+                    <div class="d-flex gap-3">
+                      <div class="number">5</div>
+                      <span>3 cloves garlic, minced</span>
+                    </div>
+                    <div class="d-flex gap-3">
+                      <div class="number">6</div>
+                      <span>500ml béchamel sauce</span>
+                    </div>
+                    <div class="d-flex gap-3">
+                      <div class="number">7</div>
+                      <span>100g parmesan cheese</span>
+                    </div>
+                    <div class="d-flex gap-3">
+                      <div class="number">8</div>
+                      <span>Cinnamon and oregano</span>
+                    </div>
+                    <div class="d-flex gap-3">
+                      <div class="number">9</div>
+                      <span>Olive oil</span>
+                    </div>
+                  </div>
+
+
+
+
+                  <div class="bg-white">
+                  <button onclick=" reloudPtn()" id="update" class="btn btn-try-another my-5 d-inline-flex align-items-center justify-content-center">
+                  <i class="fas fa-sync-alt me-2"></i> Try Another Recipe
+                </button>
+                </div>
+
+                  
+                  
+                </div>
+                
+
+                <div
+                  class="tab-pane fade"
+                  id="pills-lnstructions"
+                  role="tabpanel"
+                  aria-labelledby="pills-lnstructions-tab"
+                  tabindex="0"
+                >
+                  <div class="salted">
+                    <div class="step">
+                      <div class="circle">1</div>
+                      <p>
+                        Slice eggplants, salt them, and let sit for 30 minutes.
+                        Rinse and pat dry.
+                      </p>
+                    </div>
+
+                    <div class="step">
+                      <div class="circle">2</div>
+                      <p>
+                        Brush eggplant slices with olive oil, grill or bake
+                        until softened.
+                      </p>
+                    </div>
+
+                    <div class="step">
+                      <div class="circle">3</div>
+                      <p>
+                        Cook ground lamb with onion and garlic. Add tomatoes,
+                        cinnamon, oregano. Simmer 20 minutes.
+                      </p>
+                    </div>
+                    <div class="step">
+                      <div class="circle">4</div>
+                      <p>
+                        Cook ground lamb with onion and garlic. Add tomatoes,
+                        cinnamon, oregano. Simmer 20 minutes.
+                      </p>
+                    </div>
+                    <div class="step">
+                      <div class="circle">5</div>
+                      <p>
+                        Cook ground lamb with onion and garlic. Add tomatoes,
+                        cinnamon, oregano. Simmer 20 minutes.
+                      </p>
+                    </div>
+                    <div class="step">
+                      <div class="circle">6</div>
+                      <p>
+                        Cook ground lamb with onion and garlic. Add tomatoes,
+                        cinnamon, oregano. Simmer 20 minutes.
+                      </p>
+                    </div>
+
+
+                    
+                  </div>
+
+                                                    <div class="bg-white">
+                  <button onclick=" reloudPtn()" id="update" class="btn btn-try-another my-5 d-inline-flex align-items-center justify-content-center">
+                  <i class="fas fa-sync-alt me-2"></i> Try Another Recipe
+                </button>
+                </div>
+
+                </div>
+                <div
+                  class="tab-pane fade"
+                  id="pills-Nutrition"
+                  role="tabpanel"
+                  aria-labelledby="pills-Nutrition-tab"
+                  tabindex="0"
+                >
+                  <div class="row g-4">
+                    <div class="col-lg-6">
+                      <div
+                        class="d-flex align-items-center justify-content-between mb-5"
+                      >
+                        <div
+                          class="d-flex gap-1 align-items-center justify-content-center"
+                        >
+                          <div
+                            class="d-flex align-items-center justify-content-center bg-warning-subtle p-2 rounded-3"
+                          >
+                            <i class="fa-solid fa-fire text-danger"></i>
+                          </div>
+                          <span>Calories</span>
+                        </div>
+                        <span class="fs-5 fw-bold">680 kcal</span>
+                      </div>
+                      <div
+                        class="d-flex align-items-center justify-content-between mb-5"
+                      >
+                        <div
+                          class="d-flex gap-1 align-items-center justify-content-center"
+                        >
+                          <div
+                            class="d-flex align-items-center justify-content-center bg-warning-subtle p-2 rounded-3"
+                          >
+                            <i class="fa-brands fa-pagelines text-warning"></i>
+                          </div>
+                          <span>Carbohydrates</span>
+                        </div>
+                        <span class="fs-5 fw-bold">58g</span>
+                      </div>
+                      <div
+                        class="d-flex align-items-center justify-content-between mb-5"
+                      >
+                        <div
+                          class="d-flex gap-1 align-items-center justify-content-center"
+                        >
+                          <div
+                            class="d-flex align-items-center justify-content-center bg-secondary-subtle p-2 rounded-3"
+                          >
+                            <i class="fa-solid fa-seedling text-success"></i>
+                          </div>
+                          <span>Fiber</span>
+                        </div>
+                        <span class="fs-5 fw-bold">6g</span>
+                      </div>
+                    </div>
+
+                    <div class="col-lg-6">
+                      <div
+                        class="d-flex align-items-center justify-content-between mb-5"
+                      >
+                        <div
+                          class="d-flex gap-1 align-items-center justify-content-center"
+                        >
+                          <div
+                            class="d-flex align-items-center justify-content-center bg-primary-subtle p-2 rounded-3"
+                          >
+                            <i
+                              class="fa-solid fa-bell-concierge text-primary"
+                            ></i>
+                          </div>
+                          <span>Protein</span>
+                        </div>
+                        <span class="fs-5 fw-bold">42g</span>
+                      </div>
+
+                      <div
+                        class="d-flex align-items-center justify-content-between mb-5"
+                      >
+                        <div
+                          class="d-flex gap-1 align-items-center justify-content-center"
+                        >
+                          <div
+                            class="d-flex align-items-center justify-content-center bg-danger-subtle p-2 rounded-3"
+                          >
+                            <i class="fa-solid fa-droplet text-danger"></i>
+                          </div>
+                          <span>Fat</span>
+                        </div>
+                        <span class="fs-5 fw-bold">28g</span>
+                      </div>
+                      <div
+                        class="d-flex align-items-center justify-content-between mb-5"
+                      >
+                        <div
+                          class="d-flex gap-1 align-items-center justify-content-center"
+                        >
+                          <div
+                            class="d-flex align-items-center justify-content-center bg-secondary-subtle p-2 rounded-3"
+                          >
+                            <i class="fa-solid fa-cube text-danger"></i>
+                          </div>
+                          <span>Sodium</span>
+                        </div>
+                        <span class="fs-5 fw-bold">920mg</span>
+                      </div>
+                    </div>
+                                                      <div class="bg-white">
+                  <button onclick=" reloudPtn()" id="update" class="btn btn-try-another my-5 d-inline-flex align-items-center justify-content-center">
+                  <i class="fas fa-sync-alt me-2"></i> Try Another Recipe
+                </button>
+                </div>
+
+                  </div>
+                </div>
+                <div
+                  class="tab-pane fade"
+                  id="pills-Tips"
+                  role="tabpanel"
+                  aria-labelledby="pills-Tips-tab"
+                  tabindex="0"
+                >
+                  <div
+                    class="make d-flex gap-2 align-items-center mb-3 bg-warning-subtle p-2 rounded"
+                  >
+                    <i class="fa-solid fa-circle-check main-color"></i>
+                    <p class="text-secondary fw-lighter">
+                      Make bolognese sauce a day ahead for better flavor
+                    </p>
+                  </div>
+
+                  <div
+                    class="make d-flex gap-2 align-items-center mb-3 bg-warning-subtle p-2 rounded"
+                  >
+                    <i class="fa-solid fa-circle-check main-color"></i>
+                    <p class="text-secondary fw-lighter">
+                      Don't skip the resting time after baking
+                    </p>
+                  </div>
+
+                  <div
+                    class="make d-flex gap-2 align-items-center mb-3 bg-warning-subtle p-2 rounded"
+                  >
+                    <i class="fa-solid fa-circle-check main-color"></i>
+                    <p class="text-secondary fw-lighter">
+                      Use fresh pasta sheets for best texture
+                    </p>
+                  </div>
+
+                  <div
+                    class="make d-flex gap-2 align-items-center mb-3 bg-warning-subtle p-2 rounded"
+                  >
+                    <i class="fa-solid fa-circle-check main-color"></i>
+                    <p class="text-secondary fw-lighter">
+                      Freeze leftovers in individual portions
+                    </p>
+                  </div>
+                                                    <div class="bg-white">
+                  <button onclick=" reloudPtn()" id="update" class="btn btn-try-another my-5 d-inline-flex align-items-center justify-content-center">
+                  <i class="fas fa-sync-alt me-2"></i> Try Another Recipe
+                </button>
+                </div>
+
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+
+`
+window.scrollTo({
+  top: 0,
+  behavior: "smooth"
+});
+
+}
+
