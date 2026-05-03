@@ -120,7 +120,7 @@ document.getElementById("rowData").innerHTML = `
                     ${all[random].desc}
                   </p>
                 </div>
-                <div class="text-white">
+                <div class="text-white gap-3">
                   <button class="style-color border-0 p-2 rounded-4">
                     <a href="#"
                       ><i class="fa-solid fa-bookmark text-danger"></i
