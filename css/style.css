@@ -136,6 +136,7 @@ line-height: 8px;
   overflow-y: scroll;
   background-color: var(--style-color);
   padding: 12px;
+  border-radius: 10px;
 }
 .group::-webkit-scrollbar{
   width: 7px;
