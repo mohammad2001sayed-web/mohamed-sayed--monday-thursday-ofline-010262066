@@ -95,6 +95,10 @@ body {
   border-top-left-radius: 30px;
   border-bottom-left-radius: 30px;
 }
+#rowData{
+  border-top-left-radius: 30px !important;
+  border-bottom-left-radius: 30px !important;
+}
 
 
 .home .reviews{

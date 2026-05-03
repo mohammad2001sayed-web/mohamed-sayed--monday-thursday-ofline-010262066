@@ -81,19 +81,19 @@ document.getElementById("rowData").innerHTML = `
                   <div class="d-flex flex-column gap-2">
                     <i class="fa-solid fa-clock ms-3 main-color fs-4"></i>
                     <p>Prep Time</p>
-                    <p class="fw-bold">15 min</p>
+                    <p class="fw-bold">10 min</p>
                   </div>
                   <div class="d-flex flex-column gap-2">
                     <i
                       class="fa-solid fa-fire-burner fs-4 ms-3 text-danger"
                     ></i>
-                    <p>Prep Time</p>
+                    <p>Cook Time</p>
                     <p class="fw-bold">15 min</p>
                   </div>
                   <div class="d-flex flex-column gap-2">
                     <i class="fa-solid fa-users fs-4 ms-3 text-primary"></i>
-                    <p>Prep Time</p>
-                    <p class="fw-bold">15 min</p>
+                    <p>Servings</p>
+                    <p class="fw-bold">2 people</p>
                   </div>
                 </div>
               </div>
