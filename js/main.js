@@ -56,7 +56,7 @@ function reloudPtn() {
 document.getElementById("rowData").innerHTML = `
 
 
-            <div class="col-12 col-lg-6 p-0 "> 
+            <div class=" col-lg-6 p-0 "> 
             <div class="">
               <div class="position-relative">
                 <img
